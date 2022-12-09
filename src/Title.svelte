@@ -18,7 +18,7 @@
         font-size: 1rem;
         overflow-wrap: break-word;
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 500px) {
         .card-title_text{
         font-size: 0.7rem;
         overflow-wrap: break-word;
