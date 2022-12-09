@@ -54,7 +54,7 @@
 		padding: 0 1rem 0 1rem;
 		overflow-wrap: break-word;
         font-size: 1rem;
-        width: 20rem;
+        width: 15rem;
         
 	}
 
