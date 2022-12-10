@@ -73,16 +73,16 @@
         
 
         .overlay-container {
-		width: 70%;
+		width: 50%;
 		margin-top: 3rem;
 	}
 	.overlay-container_caption {
 		position: static;
 		top: 1rem;
-		padding: 0 0.5rem 0 0.5rem;
+		padding: 0 0.5rem ;
 		overflow-wrap: break-word;
         font-size: 0.7rem;
-        width: 100%;
+        max-width: 50%;
        
 	}
     
