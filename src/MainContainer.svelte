@@ -28,18 +28,21 @@
 	
 	let images: Image[] = [];
 	let numberOfImages: number =7
-	let queryString: string = `comics`
+	let queryString: string = `technology`
 	
 	const url: string = `${import.meta.env.VITE_UNSPLASH_URL}random?query=${queryString}&count=${numberOfImages}&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`;
 
-	let error: boolean = false
+	let fetchError: boolean = false
 	onMount(async () => {
-		const response = await fetch(url);
+		try{
+			const response = await fetch(url);
 		if (response.status !== 200) {
-			error = true
-			
+			throw new Error('Fetching Error')
 		}
 		return images = await response.json();
+		}catch(error){
+			fetchError = true
+		}
 	});
 
 	
@@ -61,7 +64,7 @@
 				/>
 			</div>
 		{:else}
-		{#if error ===false}
+		{#if fetchError ===false}
 			<div class={`grid-div_image0`}>
 				<SkeletonLoading />
 			</div>

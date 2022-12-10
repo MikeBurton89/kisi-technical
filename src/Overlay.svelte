@@ -6,8 +6,7 @@
 	<div class="overlay-container">
 		<p class="overlay-container_caption">
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-			
+			labore et dolore magna aliqua
 		</p>
 	</div>
 	<div class="overlay-button">
@@ -34,7 +33,7 @@
 		background-color: #4a52ff;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 	}
 	.overlay:not(:hover) {
 		opacity: 0;
@@ -45,17 +44,28 @@
 		transition: all 0.4s ease-out;
 	}
 	.overlay-container {
-		max-width: 75%;
-		margin-top: 3rem;
+		max-width: 95%;
+		margin-top: 4.5rem;
 	}
 	.overlay-container_caption {
 		position: static;
-		top: 3em;
-		padding: 0 1rem 0 1rem;
+		top: 5em;
+		margin: 0 0.7rem 0 0.7rem;
 		overflow-wrap: break-word;
         font-size: 1rem;
+		font-weight: normal;
         width: 100%;
         
+	}
+
+	.overlay-button {
+		color: #ffffff;
+		height: 1rem;
+		width: 1rem;
+		margin: auto;
+		position: absolute;
+		bottom: 0.5rem;
+		right: 1rem;
 	}
 
 	/* tablet responsive style */
@@ -77,16 +87,6 @@
 	}
     
     }
-	.overlay-button {
-		color: #ffffff;
-		height: 1rem;
-		width: 1rem;
-		margin: auto;
-		position: absolute;
-		bottom: 2rem;
-		right: 2rem;
-	}
-
 		 /* smartphones responsive style */
     @media screen and (max-width: 1024px) {
         .overlay-container_caption {

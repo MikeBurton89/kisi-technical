@@ -12,11 +12,12 @@
         margin-left: 1rem;
         margin-top: 0.5rem;
         z-index:999;
-        max-width: 200px;
+        min-width: 20rem;
     }
     .card-title_text{
-        font-size: 1rem;
+        font-size: 1.3rem;
         overflow-wrap: break-word;
+        font-weight: normal;
     }
     
     @media screen and (max-width: 1368px) {
@@ -34,7 +35,6 @@
     @media screen and (max-width: 1024px) {
         .card-title_text{
         font-size: 0.7rem;
-      
     }}
     .card-title{
         position:absolute;
