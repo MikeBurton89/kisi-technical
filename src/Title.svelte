@@ -25,7 +25,7 @@
     }
     .card-title{
         position:absolute;
-        margin-left: 0.5rem;
+        margin-left: 1rem;
         margin-top: 0.5rem;
         z-index:999;
         max-width: 200px;

@@ -60,21 +60,20 @@
 
 	/* tablet responsive style */
 	@media screen and (max-width: 1368px) {
-        .overlay-container_caption {
+        
+
+        .overlay-container {
+		width: 70%;
+		margin-top: 3rem;
+	}
+	.overlay-container_caption {
 		position: static;
 		top: 1rem;
 		padding: 0 0.5rem 0 0.5rem;
 		overflow-wrap: break-word;
-        font-size: 0.5rem;
-        width: 10rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-	}
-
-        .overlay-container {
-		width: 20%;
-		margin-top: 3rem;
+        font-size: 0.7rem;
+        width: 100%;
+       
 	}
     
     }
@@ -96,14 +95,12 @@
 		padding: 0 0.5rem 0 0.5rem;
 		overflow-wrap: break-word;
         font-size: 0.7rem;
-        width: 10rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width: 100%
+       ;
 	}
 
         .overlay-container {
-		width: 20%;
+		width: 100%;
 		margin-top: 3rem;
 	}
     
