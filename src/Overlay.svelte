@@ -45,7 +45,7 @@
 		transition: all 0.4s ease-out;
 	}
 	.overlay-container {
-		min-width: 250px;
+		max-width: 75%;
 		margin-top: 3rem;
 	}
 	.overlay-container_caption {
@@ -54,15 +54,46 @@
 		padding: 0 1rem 0 1rem;
 		overflow-wrap: break-word;
         font-size: 1rem;
-        width: 15rem;
+        width: 100%;
         
 	}
 
-    @media screen and (max-width: 500px) {
+	/* tablet responsive style */
+	@media screen and (max-width: 1368px) {
         .overlay-container_caption {
 		position: static;
-		top: 0.2em;
-		padding: 0 0.5em 0 0.5em;
+		top: 1rem;
+		padding: 0 0.5rem 0 0.5rem;
+		overflow-wrap: break-word;
+        font-size: 0.5rem;
+        width: 10rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+	}
+
+        .overlay-container {
+		width: 20%;
+		margin-top: 3rem;
+	}
+    
+    }
+	.overlay-button {
+		color: #ffffff;
+		height: 1rem;
+		width: 1rem;
+		margin: auto;
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+	}
+
+		 /* smartphones responsive style */
+    @media screen and (max-width: 1024px) {
+        .overlay-container_caption {
+		position: static;
+		top: 0.2rem;
+		padding: 0 0.5rem 0 0.5rem;
 		overflow-wrap: break-word;
         font-size: 0.7rem;
         width: 10rem;
