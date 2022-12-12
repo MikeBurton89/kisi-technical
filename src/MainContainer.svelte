@@ -14,7 +14,7 @@
 		'Shared workspaces',
 		'Capacity management',
 		`Credentials`,
-		'Connect people & spaces',
+		`Connect people & spaces`,
 		`Cloud`,
 		`Intrusion detection`,
 		`Hidden1`,
@@ -290,7 +290,7 @@
 			width: 100%;
 			padding: 5px;
 			grid-template-columns: repeat(4, 25%);
-			grid-template-rows: repeat(10, 10%);
+			grid-template-rows: 5% repeat(9, 10%);
 			grid-column-gap: 10px;
 			grid-row-gap: 10px;
 		}
@@ -312,7 +312,7 @@
 			grid-area: 3 / 1 / 5 / 3;
 		}
 		.grid-div_image4 {
-			grid-area: 9 / 1 / 11 / 3;
+			grid-area: 7 / 1 / 10/ 2;
 		}
 		.grid-div_image5 {
 			grid-area: 4 / 3 / 7 / 3;
@@ -321,7 +321,7 @@
 			grid-area: 7/ 3 / 10 / 5;
 		}
 		.grid-div_image7 {
-			grid-area: 7 / 1 / 9/ 3
+			grid-area: 7 / 2 / 9/ 3
 
 		}
 		.grid-div_image8 {
