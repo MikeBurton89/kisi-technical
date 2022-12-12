@@ -202,11 +202,11 @@
 		position: absolute;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-items: center;
 		color: #ffffff;
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
-		height: 95vh;
+		height: 100%;
 		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -220,10 +220,11 @@
 		.main-container_grid {
 			display: grid;
 			height: 100%;
+			margin:auto;
 			width: 90%;
 			padding: 2rem;
 			grid-template-columns: repeat(10, 1fr);
-			grid-template-row: repeat(10, 10%);
+			grid-template-rows: repeat(8, 10%);
 			grid-column-gap: 10px;
 			grid-row-gap: 10px;
 		}
@@ -251,7 +252,7 @@
 			grid-area: 6 / 3 / 8 / 6;
 		}
 		.grid-div_image6 {
-			grid-area: 6 / 6 / 10 / 9;
+			grid-area: 6 / 6 / 8 / 9;
 		}
 		.grid-div_image7 {
 		grid-area: 6 / 1 / 8/ 3
@@ -266,7 +267,9 @@
 	/* // smartphones responsive style */
 	@media screen and (max-width: 992px) {
 		.main-title {
-			font-size: 1.5rem;
+			font-size: 2rem;
+			padding:0;
+			margin:0;
 		}
 		.main-container {
 		position: absolute;
@@ -276,52 +279,56 @@
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
 		height: 95vh;
-		width: 100%;
+		width: 95vw;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: auto;
 	}
 		.main-container_grid {
 			display: grid;
 			height: 90%;
 			width: 100%;
-			padding: 0;
+			padding: 5px;
 			grid-template-columns: repeat(4, 25%);
-			grid-template-row: repeat(10, 10%);
+			grid-template-rows: repeat(10, 10%);
 			grid-column-gap: 10px;
 			grid-row-gap: 10px;
 		}
 
 		.grid-div_title {
-			grid-area: 1 / 1 / 2 / 5;
+			grid-area: 1 / 1 / 2 / 3;
 			align-content: flex-end;
 		}
 		.grid-div_image0 {
-			grid-area: 2 / 3 / 2/ 5;
+			grid-area: 1 / 3 / 4/ 5;
 		}
 		.grid-div_image1 {
-			grid-area: 2 / 1 / 4 / 3;
+			grid-area: 2 / 1 / 3 / 3;
 		}
 		.grid-div_image2 {
-			grid-area: 4 / 1 / 5 / 3;
-		}
-		.grid-div_image3 {
-			grid-area: 3 / 3 / 4 / 5;
-		}
-		.grid-div_image4 {
 			grid-area: 5 / 1 / 7 / 3;
 		}
+		.grid-div_image3 {
+			grid-area: 3 / 1 / 5 / 3;
+		}
+		.grid-div_image4 {
+			grid-area: 9 / 1 / 10 / 3;
+		}
 		.grid-div_image5 {
-			grid-area: 4 / 3 / 5 / 5;
+			grid-area: 4 / 3 / 7 / 3;
 		}
 		.grid-div_image6 {
-			grid-area: 5/ 3 / 6 / 5;
+			grid-area: 7/ 3 / 10 / 5;
 		}
 		.grid-div_image7 {
+			grid-area: 7 / 1 / 9/ 3
 
 		}
+		.grid-div_image8 {
+            grid-area: 4 / 4 / 6/ 5
+		}
 		.grid-div_button {
-			grid-area: 6 / 3 / 7 / 11;
+			grid-area: 10 / 3 / 10 / 4;
 		}
 	}
 </style>
