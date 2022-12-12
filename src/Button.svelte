@@ -1,4 +1,12 @@
-<button class="button"> Button </button>
+<script lang='ts'>
+	import { hidden } from './store';
+
+	function handleHide(event:MouseEvent) {
+		$hidden = !$hidden
+	}
+</script>
+
+<button on:click={handleHide} class="button"> Button </button>
 
 <style>
 	.button {

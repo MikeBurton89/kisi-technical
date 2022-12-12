@@ -3,8 +3,14 @@
 	import SkeletonLoading from './SkeletonLoading.svelte';
 	import Error from './Error.svelte';
 	import { onMount } from 'svelte';
-	/** @type {import('./$types').PageLoad} */
+
+	import { hidden } from './store';
+	
 	import ImageContainer from './ImageContainer.svelte';
+
+	let hiddenStyles = {
+		'display': `${hidden ? 'none' : 'block'}`
+	}
 
 	const titles: string[] = [
 		`Seamless access`,
@@ -13,7 +19,9 @@
 		`Credentials`,
 		'Connect people & spaces',
 		`Cloud`,
-		`Intrusion detection`
+		`Intrusion detection`,
+		`Hidden1`,
+		`Hidden2`
 	];
 
 	type Image = { urls: ImageUrls };
@@ -25,7 +33,7 @@
 	//fetch function to get random images from unsplash api
 
 	let images: Image[] = [];
-	let numberOfImages: number = 7;
+	let numberOfImages: number = 9;
 	let queryString: string = `technology`;
 
 	const url: string = `${
@@ -56,12 +64,13 @@
 			</h1>
 		</div>
 		{#each images as image, index}
-			<div class={`grid-div_image${index}`}>
+			<div class={`grid-div_image${index} ${index >=7 && $hidden === true ?`hidden` : null}`}>
 				<ImageContainer
 					imageUrl={image.urls.full}
 					imageAlt={image.urls.alt_description}
 					title={titles.find((el, title_index) => index === title_index)}
 				/>
+				
 			</div>
 		{:else}
 			{#if fetchError === false}
@@ -173,8 +182,18 @@
 	.grid-div_image6 {
 		grid-area: 5 / 10 / 8 / 13;
 	}
+	.grid-div_image7 {
+		grid-area: 7 / 1 / 9/ 3
+	}
+	.grid-div_image8 {
+		grid-area: 1 / 10/ 5/ 13
+	}
 	.grid-div_button {
 		grid-area: 8 / 10 / 9 / 11;
+	}
+
+	.hidden{
+		display:none
 	}
 
 	/* tablet responsive design */
@@ -214,7 +233,7 @@
 			justify-items: start;
 		}
 		.grid-div_image0 {
-			grid-area: 1 / 5 / 4 / 10;
+			grid-area: 1 / 5 / 4 / 9;
 		}
 		.grid-div_image1 {
 			grid-area: 2 / 1 / 4 / 5;
@@ -229,11 +248,17 @@
 			grid-area: 4 / 7 / 6 / 11;
 		}
 		.grid-div_image5 {
-			grid-area: 6 / 1 / 8 / 4;
+			grid-area: 6 / 3 / 8 / 6;
 		}
 		.grid-div_image6 {
-			grid-area: 6 / 4 / 10 / 9;
+			grid-area: 6 / 6 / 10 / 9;
 		}
+		.grid-div_image7 {
+		grid-area: 6 / 1 / 8/ 3
+	}
+	.grid-div_image8 {
+		grid-area: 1 / 9/ 4/ 11
+	}
 		.grid-div_button {
 			grid-area: 6/ 9 / 6 / 10;
 		}
@@ -246,7 +271,7 @@
 		.main-container {
 		position: absolute;
 		display: flex;
-		align-items: start;
+		align-items: center;
 		color: #ffffff;
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
@@ -291,6 +316,9 @@
 		}
 		.grid-div_image6 {
 			grid-area: 5/ 3 / 6 / 5;
+		}
+		.grid-div_image7 {
+
 		}
 		.grid-div_button {
 			grid-area: 6 / 3 / 7 / 11;

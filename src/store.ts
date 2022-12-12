@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const imagesArray = writable<object[] | void>([])
+export const hidden = writable(false)
