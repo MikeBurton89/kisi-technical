@@ -9,7 +9,7 @@
 
 <div class="image-container">
 	<Title {title} />
-	<img src={imageUrl} alt={imageAlt} />
+	<img class='fade-in-image' src={imageUrl} alt={imageAlt} />
 	<div class="after">
 		<Overlay />
 	</div>
@@ -42,4 +42,12 @@
 	.image-container:hover .after {
 		display: block;
 	}
+	.fade-in-image { 
+		animation: fadeIn 5s;
+		
+	 }
+	@keyframes fadeIn {
+       0% { opacity: 0; }
+       100% { opacity: 1; }
+    }
 </style>

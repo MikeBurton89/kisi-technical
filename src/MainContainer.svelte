@@ -1,4 +1,5 @@
 <script lang="ts">
+	/** @type {import('./$types').PageLoad} */
 	import Button from './Button.svelte';
 	import SkeletonLoading from './SkeletonLoading.svelte';
 	import Error from './Error.svelte';
@@ -7,10 +8,6 @@
 	import { hidden } from './store';
 	
 	import ImageContainer from './ImageContainer.svelte';
-
-	let hiddenStyles = {
-		'display': `${hidden ? 'none' : 'block'}`
-	}
 
 	const titles: string[] = [
 		`Seamless access`,
@@ -23,7 +20,7 @@
 		`Hidden1`,
 		`Hidden2`
 	];
-
+// types for array of images 
 	type Image = { urls: ImageUrls };
 	type ImageUrls = {
 		full: string;
@@ -43,7 +40,8 @@
 	}`;
 
 	let fetchError: boolean = false;
-	onMount(async () => {
+
+	async function load(){
 		try {
 			const response = await fetch(url);
 			if (response.status !== 200) {
@@ -53,7 +51,9 @@
 		} catch (error) {
 			fetchError = true;
 		}
-	});
+	}
+	// method to fetch on mount
+	onMount(()=>load());
 </script>
 
 <div class="main-container">
@@ -312,7 +312,7 @@
 			grid-area: 3 / 1 / 5 / 3;
 		}
 		.grid-div_image4 {
-			grid-area: 9 / 1 / 10 / 3;
+			grid-area: 9 / 1 / 11 / 3;
 		}
 		.grid-div_image5 {
 			grid-area: 4 / 3 / 7 / 3;
