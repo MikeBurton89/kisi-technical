@@ -178,7 +178,21 @@
 	}
 
 	/* tablet responsive design */
-	@media screen and (max-width: 1368px) {
+	@media screen and (min-width: 992px) and (max-width: 1368px) {
+		.main-container {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #191919;
+		height: 95vh;
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 		.main-title {
 			font-size: 2rem;
 			padding: 0;
@@ -229,6 +243,19 @@
 		.main-title {
 			font-size: 1.5rem;
 		}
+		.main-container {
+		position: absolute;
+		display: flex;
+		align-items: start;
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #191919;
+		height: 95vh;
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 		.main-container_grid {
 			display: grid;
 			height: 90%;
@@ -248,10 +275,10 @@
 			grid-area: 2 / 3 / 2/ 5;
 		}
 		.grid-div_image1 {
-			grid-area: 2 / 1 / 3 / 3;
+			grid-area: 2 / 1 / 4 / 3;
 		}
 		.grid-div_image2 {
-			grid-area: 3 / 1 / 5 / 3;
+			grid-area: 4 / 1 / 5 / 3;
 		}
 		.grid-div_image3 {
 			grid-area: 3 / 3 / 4 / 5;

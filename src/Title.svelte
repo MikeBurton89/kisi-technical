@@ -12,7 +12,8 @@
         margin-left: 1rem;
         margin-top: 0.5rem;
         z-index:999;
-        max-width: 150px;
+        min-width: 50%;
+   
     }
     .card-title_text{
         font-size: 1.3rem;
