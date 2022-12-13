@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { lazyLoad } from './lazyLoading'
 	import Title from './Title.svelte';
 	import Overlay from './Overlay.svelte';
 	export let title: string | undefined;
@@ -9,7 +10,7 @@
 
 <div class="image-container">
 	<Title {title} />
-	<img class='fade-in-image' src={imageUrl} alt={imageAlt} />
+	<img class='fade-in-image' use:lazyLoad={imageUrl} alt={imageAlt} />
 	<div class="after">
 		<Overlay />
 	</div>

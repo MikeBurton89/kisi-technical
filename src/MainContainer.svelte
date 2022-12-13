@@ -1,5 +1,6 @@
 <script lang="ts">
 	/** @type {import('./$types').PageLoad} */
+	
 	import Button from './Button.svelte';
 	import SkeletonLoading from './SkeletonLoading.svelte';
 	import Error from './Error.svelte';
@@ -45,10 +46,13 @@
 		try {
 			const response = await fetch(url);
 			if (response.status !== 200) {
-				throw new Error('Fetching Error');
+				console.log(response.statusText)
+				throw new Error(response.statusText);
+				
 			}
 			return (images = await response.json());
 		} catch (error) {
+			console.log(error)
 			fetchError = true;
 		}
 	}
@@ -135,10 +139,10 @@
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
 		height: 95vh;
-		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		overflow: hidden;
 	}
 	.main-container_grid {
 		display: grid;
@@ -206,14 +210,14 @@
 		color: #ffffff;
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
-		height: 100%;
-		width: 100%;
+		height: 100vh;
+		overflow: hidden;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 		.main-title {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			padding: 0;
 			margin: 0;
 		}
@@ -227,6 +231,7 @@
 			grid-template-rows: repeat(8, 10%);
 			grid-column-gap: 10px;
 			grid-row-gap: 10px;
+			overflow: hidden;
 		}
 		.grid-div_title {
 			display: grid;
@@ -240,34 +245,34 @@
 			grid-area: 2 / 1 / 4 / 5;
 		}
 		.grid-div_image2 {
-			grid-area: 4 / 1 / 6 / 4;
+			grid-area: 4 / 1 / 7 / 4;
 		}
 		.grid-div_image3 {
-			grid-area: 4 / 4 / 6 / 7;
+			grid-area: 4 / 4 / 7 / 7;
 		}
 		.grid-div_image4 {
-			grid-area: 4 / 7 / 6 / 11;
+			grid-area: 4 / 7 / 7 / 11;
 		}
 		.grid-div_image5 {
-			grid-area: 6 / 3 / 8 / 6;
+			grid-area: 7 / 3 / 9 / 6;
 		}
 		.grid-div_image6 {
-			grid-area: 6 / 6 / 8 / 9;
+			grid-area: 7 / 6 / 9 / 9;
 		}
 		.grid-div_image7 {
-		grid-area: 6 / 1 / 8/ 3
+		grid-area: 7 / 1 / 9/ 3
 	}
 	.grid-div_image8 {
 		grid-area: 1 / 9/ 4/ 11
 	}
 		.grid-div_button {
-			grid-area: 6/ 9 / 6 / 10;
+			grid-area: 7/ 9 / 7 / 10;
 		}
 	}
 	/* // smartphones responsive style */
 	@media screen and (max-width: 992px) {
 		.main-title {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			padding:0;
 			margin:0;
 		}

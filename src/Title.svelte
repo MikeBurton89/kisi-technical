@@ -12,7 +12,7 @@
         margin-left: 1rem;
         margin-top: 0.5rem;
         z-index:999;
-        min-width: 50%;
+        min-width: 100%;
    
     }
     .card-title_text{
