@@ -6,7 +6,7 @@
 	import Error from './Error.svelte';
 	import { onMount } from 'svelte';
 
-	import { hidden } from './store';
+	import { hidden, hovered } from './store';
 	
 	import ImageContainer from './ImageContainer.svelte';
 
@@ -63,7 +63,7 @@
 <div class="main-container">
 	<div class="main-container_grid">
 		<div class="grid-div_title">
-			<h1 class="main-title">
+			<h1 class={`${$hovered===false ? 'main-title' : 'main-title_hovered'} `}>
 				{`Connect people & spaces`}
 			</h1>
 		</div>
@@ -139,7 +139,7 @@
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
 		height: 95vh;
-		width: 100vh;
+		width: 100vw;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -159,6 +159,12 @@
 		font-size: 2rem;
 		padding: 0;
 		margin: 0;
+	}
+
+	.main-title_hovered {
+		font-size: 2rem;
+		padding: 0;
+		margin-bottom: 1rem;
 	}
 
 	.grid-div_title {
@@ -223,6 +229,11 @@
 			padding: 0;
 			margin: 0;
 		}
+		.main-title_hovered {
+		font-size: 1.5rem;
+		padding: 0;
+		margin-bottom: 1rem;
+	}
 		.main-container_grid {
 			display: grid;
 			height: 100%;
@@ -278,6 +289,12 @@
 			padding:0;
 			margin:0;
 		}
+
+		.main-title_hovered {
+		font-size: 1.5rem;
+		padding: 0;
+		margin-bottom: 1rem;
+	}
 		.main-container {
 		position: absolute;
 		display: flex;
@@ -290,6 +307,18 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: auto;
+		overflow: auto;
+	}
+	.main-title {
+			font-size: 1.5rem;
+			padding:0;
+			margin:0;
+		}
+
+		.main-title_hovered {
+		font-size: 1.5rem;
+		padding: 0;
+		margin-bottom: 1rem;
 	}
 		.main-container_grid {
 			display: grid;

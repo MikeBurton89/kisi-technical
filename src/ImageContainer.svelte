@@ -2,15 +2,17 @@
 	import { lazyLoad } from './lazyLoading'
 	import Title from './Title.svelte';
 	import Overlay from './Overlay.svelte';
+	import {hovered } from './store';
+
 	export let title: string | undefined;
 	export let imageUrl: string;
 	export let imageAlt: string;
 	
 </script>
 
-<div class="image-container">
+<div class="image-container" on:mouseleave={()=>$hovered=false} on:mouseover={()=>$hovered= true}>
 	<Title {title} />
-	<img class='fade-in-image' use:lazyLoad={imageUrl} alt={imageAlt} />
+	<img class='fade-in-image'  use:lazyLoad={imageUrl} alt={imageAlt} />
 	<div class="after">
 		<Overlay />
 	</div>
