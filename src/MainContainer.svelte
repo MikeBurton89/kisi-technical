@@ -139,6 +139,7 @@
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
 		height: 95vh;
+		width: 100vh;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -211,6 +212,7 @@
 		font-family: Arial, Helvetica, sans-serif;
 		background-color: #191919;
 		height: 100vh;
+		width:100vw;
 		overflow: hidden;
 		background-position: center;
 		background-repeat: no-repeat;
